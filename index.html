@@ -293,6 +293,20 @@
     }
       }
 
+
+
+      .search-box {
+        display: none;
+        }
+
+    .search-box.show {
+        display: block;
+    }
+
+    .nav .navlink .activee a{
+        text-decoration: underline;
+    }
+
     </style>
 
     
@@ -315,7 +329,7 @@
                     </div>
                     <div class="nav">
                         <ul class="navlink">
-                            <li><a href="#">Home</a></li>
+                            <li class="activee"><a href="#">Home</a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Our Collections</a></li>
                             <li><a href="#">Ready to Wear</a></li>
@@ -326,12 +340,15 @@
                         <div class="search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
+                        <div class="search-box">
+                            <input type="text" id="search" placeholder="Search product...">
+                        </div>
                         <div class="whistlist">
                             <i class="fa-solid fa-heart"></i>
                         </div>
                         <div class="product-cart">
                             <i class="fa-solid fa-cart-shopping"></i>
-                            <span>0</span>
+                            <span>2</span>
                         </div>
                     </div>
 
@@ -633,6 +650,27 @@ form.addEventListener("submit", ()=>{
         alert("phone is required");
     }
 })
+
+
+
+const search = document.querySelector(".search");
+const searchBox = document.querySelector(".search-box");
+
+search.addEventListener("click", function () {
+    searchBox.classList.toggle("show");
+});
+
+
+
+const menu = document.querySelector(' nav .navlink');
+
+const navItems = menu.querySelectorAll('li');
+navItems.forEach(item => {
+  const link = item.querySelector('a');
+  ink.addEventListener('click', () => {
+    link.classList.add(".activee");
+  });
+});
 
 
 </script>
