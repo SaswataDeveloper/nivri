@@ -566,6 +566,35 @@
 
     </div>
 
+
+
+   <div class="form-section">
+
+    <div class="container">
+        <form id="myForm">
+
+            <label>Name</label>
+            <input type="text" id="name">
+            <input type="email" id="email">
+            <input type="number" min="10" max="10" id="phone">
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <p id="error"></p>
+    </div>
+    
+   </div> 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/js/all.min.js" integrity="sha512-BivWm1+PupfLofQ5Ei/fNEC6Oq6IZiGO9WUm2ibWHZ33cj/qTX4zsBW/0SN9Myo4HEmINmr0wjuQE8eDL3rmng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
@@ -585,6 +614,25 @@ window.addEventListener("scroll", () => {
 function tooglemenu(){
     document.querySelector(".nav").classList.toggle("act");
 }
+
+
+const form = document.querySelector("#myForm");
+
+const name = document.querySelector("#name");
+const email = document.querySelector("#email");
+const phone = document.querySelector("#phone");
+
+
+
+form.addEventListener("submit", ()=>{
+    if(name.value ===""){
+        alert("Name is required");
+    }if(email.value ===""){
+        alert("Email is required");
+    }if(phone.value ===""){
+        alert("phone is required");
+    }
+})
 
 
 </script>
