@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <style>
+        .container{
+            max-width: 1480px;
+            margin: auto;
+            padding: 0 15px;
+        }
+        .c{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card img{
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+        
+        .card{
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            
+        }
+
+        
+
+        .card-content .icon{
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: #fff;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .card:hover .card-content .icon{
+            opacity: 1;
+        }
+
+        .card-content .card-button{
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .card-content .size{
+            position: absolute;
+            left: 0;
+            bottom: -10%;
+            transition: all 0.5s ease;
+            color: #fff;
+            font-weight: 600;
+            opacity: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card:hover .card-content .size{
+            left: 0;
+            bottom: 10px;
+            opacity: 1;
+            
+        }
+
+        .card:hover .card-content .card-button{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            
+        }
+
+        .card-button button{
+            background-color: black;
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 33px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .card-button button:hover{
+            background-color: rgb(141, 141, 141);
+            color: #000;
+            padding: 15px 35px;
+            border-radius: 33px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card-button{
+            display: flex;
+            flex-direction: column;
+            gap: 15px 0;
+        }
+
+        /* .card-button{
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5 ease;
+        }
+
+        .card:hover .card-button{
+            opacity: 1;
+            visibility: visible;
+        } */
+
+        .product-main{
+            padding: 50px 0;
+        }
+
+        .card:hover{
+            transform: translateY(-10px);
+        }
+
+        
+        .card {
+            position: relative;
+            overflow: hidden;
+            animation: cardLoad 0.5s forwards;
+            opacity: 0;
+        }
+
+    @keyframes cardLoad {
+        0% {
+            opacity: 0;
+            transform: translateY(200px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .top-header p{
+        color: #fff;
+    }
+
+    .top-header{
+        background-color: #F05986;
+    }
+
+    .top{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navlink li a{
+        text-decoration: none;
+        color: #000;
+        transition: all 0.5s ease-in-out;
+        font-size: 18px;
+    }
+
+    .navlink li a:hover{
+        color: #f05986;
+    }
+    .navlink{
+        list-style-type: none;
+        display: flex;
+        gap: 0 30px;
+    }
+
+    .button{
+        display: flex;
+        gap: 0 20px;
+        cursor: pointer;
+    }
+    .button .search i,
+     .button .whistlist i,
+      .button .product-cart i {
+        font-size: 25px;
+    }
+
+    .main-menu {
+    width: 100%;
+    background: #fff;
+    transition: 0.3s ease;
+}
+
+.main-menu.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .product-cart{
+        position: relative;
+    }
+
+    .product-cart span{
+        position: absolute;
+        background-color: #F05986;
+        top: -13px;
+        right: -5px;
+        color: #fff;
+        padding: 2px;
+        font-size: 11px;
+    }
+
+
+          swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .phone-icon{
+        display: none;
+      }
+
+      @media (max-width: 600px){
+
+        .phone-icon{
+            display: block;    
+        }
+        .nav{
+            position: absolute;
+            background-color: #F05986;
+            width: 100%;
+            height: 100%;
+            top: 102px;
+            left: -100%;
+            z-index: 9;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .nav.act{
+            left: 0;
+        }
+
+        .nav .navlink{
+            flex-direction: column;
+            gap: 18px 0;
+        }
+
+        .nav .navlink li a{
+            color: #fff;
+        }
+
+        .main-menu.sticky {
+        position: fixed;
+        top: 46px;
+        left: -10px;
+        width: 100%;
+        z-index: 9999;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+      }
+
+    </style>
+
+    
+
+    <!-- ================Header====================== -->
+
+    <section class="header">
+
+        <div class="top-header">
+            <div class="container top">
+                <p>Welcome To Nivriti</p>
+            </div>
+        </div>
+
+        <div class="main-menu">
+            <div class="container">
+                <div class="main">
+                    <div class="logo">
+                        <img src="https://nivriticlothing.com/wp-content/uploads/2025/12/NIVRITI-LOGO.png">
+                    </div>
+                    <div class="nav">
+                        <ul class="navlink">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Collections</a></li>
+                            <li><a href="#">Ready to Wear</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="button">
+                        <div class="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="whistlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="product-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div class="phone-icon" onclick="tooglemenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ================Header====================== -->
+
+
+
+    <swiper-container
+      class="mySwiper"
+      pagination="true"
+      pagination-clickable="true"
+      space-between="30"
+      effect="fade"
+      navigation="true"
+    >
+      <swiper-slide>
+        <img src=" https://nivriticlothing.com/wp-content/uploads/2026/06/Nivriti-HB_260609B0101.jpg.jpeg" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://nivriticlothing.com/wp-content/uploads/2026/06/Nivriti-HB_260609A0101.jpg.jpeg" />
+      </swiper-slide>
+    </swiper-container>
+
+
+
+    <div class="product-main">
+
+        <div class="container c">
+
+            <div class="card">
+
+                <img src="https://nivriticlothing.com/wp-content/uploads/2026/01/Copy-of-57-Custom-683x1024.jpg"> 
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="card-button">
+                        <button>Add to Card</button>
+                        <button>Select Option</button>
+                    </div>
+                    <div class="size">
+                        <p>S,M,L,XXL,XXXL</p>
+                    </div>
+                </div>
+                <div class="undercard-description">
+                    <p>Blush Petal Drape with Embellished Cape Detail</p>
+                    <p>₹16,500.00</p>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://nivriticlothing.com/wp-content/uploads/2026/02/NIVRITI-21.01.269531-Custom.jpg"> 
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="card-button">
+                        <button>Add to Card</button>
+                        <button>Select Option</button>
+                    </div>
+                    <div class="size">
+                        <p>S,M,L,XXL,XXXL</p>
+                    </div>
+                </div>
+                <div class="undercard-description">
+                    <p>Blush Petal Drape with Embellished Cape Detail</p>
+                    <p>₹16,500.00</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://nivriticlothing.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-12-09-at-1.29.05-PM-Custom.jpeg"> 
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="card-button">
+                        <button>Add to Card</button>
+                        <button>Select Option</button>
+                    </div>
+                    <div class="size">
+                        <p>S,M,L,XXL,XXXL</p>
+                    </div>
+                </div>
+                <div class="undercard-description">
+                    <p>Blush Petal Drape with Embellished Cape Detail</p>
+                    <p>₹16,500.00</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://nivriticlothing.com/wp-content/uploads/2026/01/Statement-Fringe-Detail-Monochrome-Dress.jpg"> 
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="card-button">
+                        <button>Add to Card</button>
+                        <button>Select Option</button>
+                    </div>
+                    <div class="size">
+                        <p>S,M,L,XXL,XXXL</p>
+                    </div>
+                </div>
+                <div class="undercard-description">
+                    <p>Blush Petal Drape with Embellished Cape Detail</p>
+                    <p>₹16,500.00</p>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="product-main">
+
+        <div class="container c">
+
+            <div class="card">
+
+                <img src="https://nivriticlothing.com/wp-content/uploads/2026/05/12-3.jpg"> 
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="card-button">
+                        <button>Add to Card</button>
+                        <button>Select Option</button>
+                    </div>
+                    <div class="size">
+                        <p>S,M,L,XXL,XXXL</p>
+                    </div>
+                </div>
+                <div class="undercard-description">
+                    <p>Blush Petal Drape with Embellished Cape Detail</p>
+                    <p>₹16,500.00</p>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://nivriticlothing.com/wp-content/uploads/2025/12/2-10.png"> 
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="card-button">
+                        <button>Add to Card</button>
+                        <button>Select Option</button>
+                    </div>
+                    <div class="size">
+                        <p>S,M,L,XXL,XXXL</p>
+                    </div>
+                </div>
+                <div class="undercard-description">
+                    <p>Blush Petal Drape with Embellished Cape Detail</p>
+                    <p>₹16,500.00</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://nivriticlothing.com/wp-content/uploads/2026/05/1-6.jpg"> 
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="card-button">
+                        <button>Add to Card</button>
+                        <button>Select Option</button>
+                    </div>
+                    <div class="size">
+                        <p>S,M,L,XXL,XXXL</p>
+                    </div>
+                </div>
+                <div class="undercard-description">
+                    <p>Blush Petal Drape with Embellished Cape Detail</p>
+                    <p>₹16,500.00</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://nivriticlothing.com/wp-content/uploads/2026/05/1-7.jpg"> 
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="card-button">
+                        <button>Add to Card</button>
+                        <button>Select Option</button>
+                    </div>
+                    <div class="size">
+                        <p>S,M,L,XXL,XXXL</p>
+                    </div>
+                </div>
+                <div class="undercard-description">
+                    <p>Blush Petal Drape with Embellished Cape Detail</p>
+                    <p>₹16,500.00</p>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/js/all.min.js" integrity="sha512-BivWm1+PupfLofQ5Ei/fNEC6Oq6IZiGO9WUm2ibWHZ33cj/qTX4zsBW/0SN9Myo4HEmINmr0wjuQE8eDL3rmng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+const mainMenu = document.querySelector(".main-menu");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 100) {
+        mainMenu.classList.add("sticky");
+    } else {
+        mainMenu.classList.remove("sticky");
+    }
+
+});
+
+
+function tooglemenu(){
+    document.querySelector(".nav").classList.toggle("act");
+}
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-element-bundle.min.js"></script>
+</body>
+</html>
