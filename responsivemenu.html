@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.header {
+    background-color: #111;
+}
+
+.navbar {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* Menu */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 25px 0;
+}
+
+
+/* Hover */
+
+.nav-menu li a:hover {
+    color: #00bcd4;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown-btn span {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+
+/* Dropdown hidden */
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 200px;
+
+    background-color: #222;
+
+    list-style: none;
+
+    display: none;
+
+    z-index: 100;
+}
+
+
+/* Dropdown links */
+
+.dropdown-menu li a {
+    padding: 14px 15px;
+    color: #fff;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #333;
+}
+
+
+/* Desktop hover */
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    color: white;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    /* Hamburger show */
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* Main menu */
+
+    .nav-menu {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        background-color: #111;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 10px 20px;
+    }
+
+
+    /* JS দিয়ে menu open হবে */
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+
+    .nav-menu li a {
+        padding: 15px 0;
+    }
+
+
+    /* Mobile dropdown */
+
+    .dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        background-color: #222;
+    }
+
+
+    /* Desktop hover বন্ধ */
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+
+    /* JS দিয়ে dropdown open হবে */
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+
+    .dropdown-menu li a {
+        padding-left: 20px;
+    }
+
+}
+    </style>
+
+    <!-- Navbar -->
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#">MyWebsite</a>
+                </div>
+
+                <!-- Hamburger -->
+                <div class="menu-toggle" id="menuToggle">
+                    ☰
+                </div>
+
+                <!-- Menu -->
+                <ul class="nav-menu" id="navMenu">
+
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-btn">
+                            Services
+                            <span>▼</span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="#">Web Design</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Web Development</a>
+                            </li>
+
+                            <li>
+                                <a href="#">WordPress</a>
+                            </li>
+
+                            <li>
+                                <a href="#">SEO</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Dummy Content -->
+    <section class="hero">
+        <h1>Responsive Navbar</h1>
+        <p>HTML CSS JavaScript দিয়ে তৈরি</p>
+    </section>
+
+
+    <script>
+
+
+const menuToggle = document.querySelector("#menuToggle");
+const navMenu = document.querySelector("#navMenu");
+
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdown = document.querySelector(".dropdown");
+
+
+// =========================
+// MOBILE MENU
+// =========================
+
+menuToggle.addEventListener("click", function () {
+
+    navMenu.classList.toggle("active");
+
+});
+
+
+// =========================
+// MOBILE DROPDOWN
+// =========================
+
+dropdownBtn.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    dropdown.classList.toggle("active");
+
+});
+    </script>
+
+</body>
+
+</html>

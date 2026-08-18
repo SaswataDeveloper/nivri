@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    list-style-type: none;
+}
+
+:root{
+    --primary-color: #DF006B;
+    --secondary-color: #5243C2;
+}
+
+.container{
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+}
+
+/* =========== header================ */
+
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    display: flex;
+    gap: 0 30px;
+}
+
+
+section.header {
+    padding-top: 25px;
+}
+
+button.nav-btn {
+    background: transparent;
+    padding: 15px 30px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.mobile-tab{
+    display: none;
+}
+
+
+@media(max-width: 600px){
+    .mobile-tab{
+        display: block;
+    }
+
+    .nav{
+        position: relative;
+    }
+
+    /* .navlink{
+        display: none;
+    } */
+
+    ul.navlinks {
+        display: flex;
+        gap: 18px 30px;
+        flex-direction: column;
+        background: var(--primary-color);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 60px;
+        right: -110%;
+        padding: 15px;
+        color: #fff;
+        transition: all 0.5s ease-in-out;
+    }
+
+    ul.navlinks.active{
+        right: 0;
+    }
+}
+
+
+/* =========== header================ */
+
+/* ==============hero==================== */
+
+
+.hero-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button.hero-btn {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+button.hero-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-10px);
+}
+
+.hero-sec h1 {
+    font-size: 64px;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.hero-sec p{
+    font-size: 18px;
+    color: black;
+    padding-bottom: 30px;
+}
+
+.hero {
+    padding: 35px 0;
+}
+
+
+@media (max-width: 600px){
+.hero-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.hero-sec h1 {
+    font-size: 34px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.hero-sec p {
+    font-size: 16px;
+    color: black;
+    padding-bottom: 15px;
+}
+.right-imgage img{
+    width: 100%;
+}
+
+button.hero-btn {
+    margin-bottom: 75px;
+}
+}
+
+
+
+
+
+
+
+
+
+/* ==============hero==================== */

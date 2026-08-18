@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saswata Hair Studio | Vardaan Market</title>
+<meta name="description" content="Saswata Hair Studio at Vardaan Market, Kolkata. Professional hair styling, grooming and beauty services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+  --ink:#171717;
+  --muted:#6e6e6e;
+  --cream:#f8f4ee;
+  --warm:#c79562;
+  --warm-dark:#9b6c3c;
+  --white:#fff;
+  --line:#e8e0d7;
+  --soft:#fffaf4;
+  --shadow:0 18px 50px rgba(34,25,16,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.section{padding:95px 0}
+.section-head{text-align:center;max-width:680px;margin:0 auto 50px}
+.eyebrow{color:var(--warm-dark);font-size:.78rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px}
+h1,h2,h3{line-height:1.15}
+h1,h2{font-family:"Playfair Display",serif}
+.section-head h2{font-size:clamp(2rem,4vw,3.1rem);margin-bottom:16px}
+.section-head p{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:50px;font-weight:700;transition:.3s;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--warm-dark);transform:translateY(-2px)}
+.btn-outline{border-color:#fff;color:#fff;background:transparent}
+.btn-outline:hover{background:#fff;color:var(--ink)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{transform:translateY(-2px)}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 0;transition:.35s}
+.navbar.scrolled{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,.08);padding:11px 0}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Playfair Display",serif;font-size:1.55rem;font-weight:700}
+.logo span{color:var(--warm)}
+.navbar:not(.scrolled) .logo,.navbar:not(.scrolled) .nav-links a{color:#fff}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.92rem;font-weight:600;transition:.25s}
+.nav-links a:hover{color:var(--warm)!important}
+.nav-cta{padding:10px 17px;border-radius:30px;background:var(--warm);color:#fff!important}
+.menu-toggle{display:none;border:0;background:none;font-size:1.35rem;cursor:pointer}
+.navbar:not(.scrolled) .menu-toggle{color:#fff}
+
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;color:#fff;background:
+linear-gradient(90deg,rgba(10,9,8,.82) 0%,rgba(10,9,8,.56) 48%,rgba(10,9,8,.18) 100%),
+url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85") center/cover;}
+.hero-content{max-width:700px;padding-top:55px}
+.rating{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 13px;border-radius:30px;backdrop-filter:blur(8px);margin-bottom:24px;font-size:.9rem}
+.stars{color:#f3bd4b;letter-spacing:2px}
+.hero h1{font-size:clamp(3.1rem,7vw,6.4rem);margin-bottom:20px}
+.hero h1 span{color:#e0b37d}
+.hero p{font-size:1.08rem;color:#eee;max-width:590px;margin-bottom:30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-bottom{position:absolute;bottom:25px;left:0;right:0}
+.hero-meta{display:flex;gap:34px;flex-wrap:wrap;font-size:.88rem;color:#eee}
+.hero-meta i{color:#e0b37d;margin-right:7px}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-img{position:relative}
+.about-img img{height:570px;width:100%;object-fit:cover;border-radius:4px}
+.about-card{position:absolute;right:-25px;bottom:28px;background:#fff;padding:22px 25px;box-shadow:var(--shadow);border-left:4px solid var(--warm)}
+.about-card strong{font-size:1.6rem;font-family:"Playfair Display",serif;display:block}
+.about-text h2{font-size:clamp(2.2rem,4vw,3.5rem);margin-bottom:18px}
+.about-text p{color:var(--muted);margin-bottom:18px}
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:25px 0}
+.feature-list div{display:flex;gap:10px;align-items:center;font-weight:600}
+.feature-list i{color:var(--warm-dark)}
+
+.services{background:var(--cream)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;padding:30px;border:1px solid var(--line);transition:.35s}
+.service:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.service-icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#f2e4d3;color:var(--warm-dark);font-size:1.15rem;margin-bottom:22px}
+.service h3{font-family:"Playfair Display",serif;font-size:1.45rem;margin-bottom:8px}
+.service p{color:var(--muted);font-size:.92rem}
+.service .price{display:block;margin-top:18px;color:var(--warm-dark);font-weight:700}
+
+.gallery-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;grid-template-rows:260px 260px;gap:12px}
+.gallery-item{overflow:hidden;position:relative}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.gallery-item:hover img{transform:scale(1.07)}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.55));display:flex;align-items:flex-end;padding:20px;color:#fff;opacity:0;transition:.3s}
+.gallery-item:hover .gallery-overlay{opacity:1}
+
+.review-wrap{background:var(--ink);color:#fff}
+.review-wrap .section-head p{color:#bdbdbd}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{background:#242424;border:1px solid #333;padding:28px}
+.review .stars{margin-bottom:16px}
+.review p{color:#ddd;font-size:.94rem;margin-bottom:18px}
+.review strong{font-size:.9rem}
+
+.contact{background:var(--soft)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px}
+.contact-card{background:var(--ink);color:#fff;padding:45px}
+.contact-card h2{font-size:2.6rem;margin-bottom:15px}
+.contact-card>p{color:#ccc;margin-bottom:28px}
+.contact-info{display:grid;gap:18px}
+.contact-info div{display:flex;gap:14px}
+.contact-info i{color:#e0b37d;width:20px;margin-top:5px}
+.contact-info span{color:#ddd}
+.form-card{background:#fff;padding:40px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:17px}
+.field label{display:block;font-size:.85rem;font-weight:700;margin-bottom:7px}
+.field input,.field textarea{width:100%;padding:14px 15px;border:1px solid #ddd;outline:none;font:inherit;background:#fff;transition:.2s}
+.field input:focus,.field textarea:focus{border-color:var(--warm)}
+.field textarea{height:125px;resize:vertical}
+
+.map-box{margin-top:45px;min-height:280px;background:
+linear-gradient(rgba(199,149,98,.15),rgba(199,149,98,.15)),
+url("https://images.unsplash.com/photo-1524666041070-9d87656c25bb?auto=format&fit=crop&w=1500&q=80") center/cover;
+display:flex;align-items:center;justify-content:center;text-align:center}
+.map-inner{background:rgba(255,255,255,.94);padding:25px 35px;box-shadow:var(--shadow)}
+.map-inner h3{font-family:"Playfair Display",serif;font-size:1.6rem;margin-bottom:6px}
+.map-inner p{color:var(--muted);margin-bottom:15px}
+
+.footer{background:#111;color:#aaa;padding:25px 0}
+.footer-wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer .logo{color:#fff}
+.social{display:flex;gap:12px}
+.social a{width:36px;height:36px;border:1px solid #444;border-radius:50%;display:grid;place-items:center;transition:.25s}
+.social a:hover{background:var(--warm);border-color:var(--warm);color:#fff}
+
+.whatsapp{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.55rem;z-index:900;box-shadow:0 12px 30px rgba(0,0,0,.2);transition:.3s}
+.whatsapp:hover{transform:scale(1.08)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .nav-links{position:absolute;top:70px;left:4%;width:92%;background:#fff;display:none;flex-direction:column;align-items:flex-start;padding:22px;gap:18px;box-shadow:var(--shadow)}
+  .nav-links.active{display:flex}
+  .navbar:not(.scrolled) .nav-links a{color:var(--ink)}
+  .menu-toggle{display:block}
+  .service-grid,.review-grid{grid-template-columns:1fr 1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:45px}
+  .about-img img{height:450px}
+}
+@media(max-width:620px){
+  .section{padding:70px 0}
+  .hero{min-height:760px}
+  .hero h1{font-size:3.25rem}
+  .hero-bottom{display:none}
+  .service-grid,.review-grid{grid-template-columns:1fr}
+  .feature-list,.form-row{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:230px 180px 180px}
+  .gallery-item:first-child{grid-row:span 1}
+  .gallery-item:nth-child(2){grid-column:span 2}
+  .about-card{right:10px}
+  .form-card,.contact-card{padding:28px 22px}
+  .footer-wrap{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="container nav-wrap">
+    <a class="logo" href="#home">Saswata <span>Hair Studio</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact" class="nav-cta">Book Appointment</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content reveal">
+      <div class="rating"><span class="stars">★★★★★</span> 4.8 Google Rating · 332 Reviews</div>
+      <h1>Look Good.<br><span>Feel Great.</span></h1>
+      <p>Premium hair styling and beauty care at Saswata Hair Studio, Vardaan Market. A modern studio experience designed around your style.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="tel:09874443372"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <a class="btn btn-outline" href="#services">Explore Services</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <div class="container hero-meta">
+      <span><i class="fa-solid fa-location-dot"></i> Vardaan Market, Kolkata</span>
+      <span><i class="fa-regular fa-clock"></i> Open · Closes 9 PM</span>
+      <span><i class="fa-solid fa-phone"></i> 098744 43372</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-img reveal">
+      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85" alt="Hair studio">
+      <div class="about-card"><strong>4.8 / 5</strong><span>Google customer rating</span></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="eyebrow">About the Studio</div>
+      <h2>Style that feels uniquely yours.</h2>
+      <p>Welcome to Saswata Hair Studio — a contemporary salon experience in the heart of Vardaan Market, Kolkata.</p>
+      <p>From everyday grooming to a complete style refresh, our demo website presents the studio as a premium, approachable destination for modern hair and beauty care.</p>
+      <div class="feature-list">
+        <div><i class="fa-solid fa-circle-check"></i> Modern Styling</div>
+        <div><i class="fa-solid fa-circle-check"></i> Expert Care</div>
+        <div><i class="fa-solid fa-circle-check"></i> Clean Studio</div>
+        <div><i class="fa-solid fa-circle-check"></i> Personal Attention</div>
+      </div>
+      <a class="btn btn-primary" href="#contact">Make an Enquiry <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Services</div>
+      <h2>Fresh style. Professional finish.</h2>
+      <p>Sample service cards for the client demo. Replace names and prices with the studio's actual service menu.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-scissors"></i></div><h3>Haircut & Styling</h3><p>Modern cuts and styling tailored to your face shape and personal look.</p><span class="price">Enquire for price</span></article>
+      <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-user-tie"></i></div><h3>Beard Grooming</h3><p>Clean shaping and grooming for a polished everyday appearance.</p><span class="price">Enquire for price</span></article>
+      <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Hair Styling</h3><p>Event-ready and occasion styling with a refined salon finish.</p><span class="price">Enquire for price</span></article>
+      <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-droplet"></i></div><h3>Hair Care</h3><p>Care-focused treatments designed to keep your hair looking healthy.</p><span class="price">Enquire for price</span></article>
+      <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-sparkles"></i></div><h3>Beauty Care</h3><p>Simple grooming and beauty services for a refreshed look.</p><span class="price">Enquire for price</span></article>
+      <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div><h3>Appointments</h3><p>Plan your visit ahead and enjoy a smoother, more convenient experience.</p><span class="price">Call to book</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Studio Gallery</div>
+      <h2>A glimpse of the experience.</h2>
+      <p>Replace these demo images with the salon's real Google/brand photos before delivery.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85" alt="Salon interior"><div class="gallery-overlay">Studio</div></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85" alt="Hair styling"><div class="gallery-overlay">Hair Styling</div></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=85" alt="Salon service"><div class="gallery-overlay">Beauty Care</div></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=85" alt="Hair care"><div class="gallery-overlay">Hair Care</div></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=85" alt="Salon chair"><div class="gallery-overlay">The Studio</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section review-wrap" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Google Reviews</div>
+      <h2>Trusted by happy clients.</h2>
+      <p>4.8 rating based on 332 Google reviews shown in the supplied business profile screenshot.</p>
+    </div>
+    <div class="review-grid">
+      <article class="review reveal"><div class="stars">★★★★★</div><p>“A clean, premium-looking demo review area. Replace this text with an actual Google review before launch.”</p><strong>Google Customer</strong></article>
+      <article class="review reveal"><div class="stars">★★★★★</div><p>“The review section is designed to make the strong Google rating stand out without overwhelming the page.”</p><strong>Google Customer</strong></article>
+      <article class="review reveal"><div class="stars">★★★★★</div><p>“A simple and elegant layout that works well on both desktop and mobile screens.”</p><strong>Google Customer</strong></article>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Get in Touch</div>
+      <h2>Ready for your next look?</h2>
+      <p>Call the studio or send an enquiry through the demo form.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h2>Visit Saswata Hair Studio.</h2>
+        <p>Located on the 2nd floor of Vardaan Market, Camac St, Park Street area, Kolkata.</p>
+        <div class="contact-info">
+          <div><i class="fa-solid fa-location-dot"></i><span>25A, 2nd Floor, Vardaan Market, Camac St, Park Street area, Kolkata, West Bengal 700016</span></div>
+          <div><i class="fa-solid fa-phone"></i><span>098744 43372</span></div>
+          <div><i class="fa-regular fa-clock"></i><span>Open · Closes 9 PM</span></div>
+          <div><i class="fa-solid fa-location-crosshairs"></i><span>G9X3+8F Kolkata, West Bengal</span></div>
+        </div>
+        <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-light" href="tel:09874443372"><i class="fa-solid fa-phone"></i> Call Studio</a>
+          <a class="btn btn-outline" href="https://maps.app.goo.gl/heKSjgdDREa58N7z5" target="_blank"><i class="fa-solid fa-location-dot"></i> Get Directions</a>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="field"><label>Name</label><input type="text" placeholder="Your name" required></div>
+            <div class="field"><label>Phone</label><input type="tel" placeholder="Your phone number" required></div>
+          </div>
+          <div class="field"><label>Service</label><input type="text" placeholder="Which service are you interested in?"></div>
+          <div class="field"><label>Message</label><textarea placeholder="Tell us how we can help..."></textarea></div>
+          <button class="btn btn-primary" type="submit">Send Enquiry <i class="fa-solid fa-paper-plane"></i></button>
+          <p id="formMsg" style="display:none;margin-top:15px;color:#2d7a46;font-weight:600">Thank you! This demo form has been submitted successfully.</p>
+        </form>
+      </div>
+    </div>
+    <div class="map-box reveal">
+      <div class="map-inner">
+        <h3>Vardaan Market · Park Street Area</h3>
+        <p>25A, 2nd Floor, Vardaan Market, Kolkata 700016</p>
+        <a class="btn btn-primary" href="https://maps.app.goo.gl/heKSjgdDREa58N7z5" target="_blank">Open in Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-wrap">
+    <div class="logo">Saswata <span>Hair Studio</span></div>
+    <div>© <span id="year"></span> Saswata Hair Studio. Demo website.</div>
+    <div class="social">
+      <a href="tel:09874443372" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+      <a href="https://maps.app.goo.gl/heKSjgdDREa58N7z5" target="_blank" aria-label="Maps"><i class="fa-solid fa-location-dot"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919874443372" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+const navbar=document.getElementById("navbar");
+const menuToggle=document.getElementById("menuToggle");
+const navLinks=document.getElementById("navLinks");
+
+window.addEventListener("scroll",()=>{
+  navbar.classList.toggle("scrolled",window.scrollY>50);
+});
+
+menuToggle.addEventListener("click",()=>{
+  navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click",()=>navLinks.classList.remove("active"));
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("show");
+  });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+document.getElementById("contactForm").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  document.getElementById("formMsg").style.display="block";
+});
+</script>
+</body>
+</html>
